@@ -1,5 +1,6 @@
 const http = require("http");
 const fs = require("fs");
+const port = process.env.PORT || 8000
 var requests = require('requests');
 const fileName = fs.readFileSync("home.html", "utf-8");
 const replaceVal = (tempVal, orgVal) => {
@@ -30,4 +31,4 @@ const server = http.createServer((req, res) => {
     }
 });
 
-server.listen(8000, '127.0.0.1');
+server.listen(port, '127.0.0.1');
